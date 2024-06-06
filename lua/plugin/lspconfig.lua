@@ -44,6 +44,7 @@ capabilities.textDocument.completion.completionItem = {
 local lspconfig = require("lspconfig")
 
 lspconfig.clangd.setup{}
+lspconfig.jdtls.setup{}
 lspconfig.lua_ls.setup {
 	settings = {
 		Lua = {

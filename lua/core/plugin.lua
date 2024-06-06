@@ -26,7 +26,12 @@ require("lazy").setup {
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile" },
 	},
-	{ "williamboman/mason.nvim" },
+	{
+		"williamboman/mason.nvim",
+		config = function ()
+			require("mason").setup{}
+		end,
+	},
 	{
 		"hrsh7th/nvim-cmp",
 		event = "InsertEnter",

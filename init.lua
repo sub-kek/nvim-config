@@ -7,7 +7,6 @@ require("core.theme")
 -- Plugin
 require("plugin.treesitter")
 require("plugin.nvimtree")
-require("plugin.mason")
 require("plugin.lspconfig")
 require("plugin.nvimcmp")
 require("plugin.telescope")
