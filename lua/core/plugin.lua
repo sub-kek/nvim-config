@@ -28,35 +28,35 @@ require("lazy").setup {
 	},
 	{ "williamboman/mason.nvim" },
 	{
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    dependencies = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-nvim-lsp",
-      "saadparwaiz1/cmp_luasnip",
-      "hrsh7th/cmp-nvim-lua",
-      "rafamadriz/friendly-snippets",
+		"hrsh7th/nvim-cmp",
+		event = "InsertEnter",
+		dependencies = {
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-nvim-lsp",
+			"saadparwaiz1/cmp_luasnip",
+			"hrsh7th/cmp-nvim-lua",
+			"rafamadriz/friendly-snippets",
 
-      {
-        "L3MON4D3/LuaSnip",
-        config = function()
-          require("luasnip.loaders.from_vscode").lazy_load()
-        end,
-      },
+			{
+				"L3MON4D3/LuaSnip",
+				config = function()
+					require("luasnip.loaders.from_vscode").lazy_load()
+				end,
+			},
 
-      {
-        "windwp/nvim-autopairs",
-        config = function()
-          require("nvim-autopairs").setup()
+			{
+				"windwp/nvim-autopairs",
+				config = function()
+					require("nvim-autopairs").setup()
 
-          local cmp_autopairs = require "nvim-autopairs.completion.cmp"
-          local cmp = require "cmp"
-          cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
-        end,
-      },
-    },
-  },
+					local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+					local cmp = require "cmp"
+					cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
+				end,
+			},
+		},
+	},
 	{ "stevearc/conform.nvim" },
 	{ "nvim-telescope/telescope.nvim" },
 	{ "nvim-lua/plenary.nvim" },
