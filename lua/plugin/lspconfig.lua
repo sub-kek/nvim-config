@@ -31,6 +31,7 @@ capabilities.textDocument.completion.completionItem = {
   labelDetailsSupport = true,
   deprecatedSupport = true,
   commitCharactersSupport = true,
+	updateInInsert = true,
   tagSupport = { valueSet = { 1 } },
   resolveSupport = {
     properties = {
@@ -43,6 +44,7 @@ capabilities.textDocument.completion.completionItem = {
 
 local lspconfig = require("lspconfig")
 
+lspconfig.clangd.setup{}
 lspconfig.lua_ls.setup {
 	settings = {
 		Lua = {

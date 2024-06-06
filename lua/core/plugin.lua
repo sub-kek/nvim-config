@@ -58,4 +58,17 @@ require("lazy").setup {
     },
   },
 	{ "stevearc/conform.nvim" },
+	{ "nvim-telescope/telescope.nvim" },
+	{ "nvim-lua/plenary.nvim" },
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function ()
+			require("gitsigns").setup{}
+		end,
+	},
+	{
+		"akinsho/bufferline.nvim",
+    event = "BufReadPre",
+	},
+	{ "echasnovski/mini.statusline" },
 }
