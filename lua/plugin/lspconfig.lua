@@ -31,7 +31,6 @@ capabilities.textDocument.completion.completionItem = {
   labelDetailsSupport = true,
   deprecatedSupport = true,
   commitCharactersSupport = true,
-	updateInInsert = true,
   tagSupport = { valueSet = { 1 } },
   resolveSupport = {
     properties = {
@@ -60,4 +59,8 @@ lspconfig.lua_ls.setup {
 			},
 		},
 	},
+}
+
+vim.diagnostic.config {
+	update_in_insert = true,
 }
