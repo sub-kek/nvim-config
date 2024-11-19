@@ -4,6 +4,7 @@ vim.g.mapleader = " "
 
 -- Workspace
 set.number = true
+set.swapfile = false
 
 -- TAB
 set.tabstop = 2

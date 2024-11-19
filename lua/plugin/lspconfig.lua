@@ -45,21 +45,37 @@ local lspconfig = require("lspconfig")
 
 lspconfig.clangd.setup{}
 lspconfig.jdtls.setup{}
+lspconfig.bashls.setup{}
+lspconfig.gradle_ls.setup{}
+lspconfig.kotlin_language_server.setup{}
+lspconfig.docker_compose_language_service.setup{}
+lspconfig.dockerls.setup{}
+lspconfig.yamlls.setup{}
+lspconfig.cmake.setup{}
+
+local factorio_data_path = vim.fn.expand("~/.config/nvim/lua_prototypes/factorio-data")
+
 lspconfig.lua_ls.setup {
-	settings = {
-		Lua = {
-			diagnotics = {
-				globals = { "vim", },
-			},
-			workspace = {
-				library = {
-						vim.fn.expand "$VIMRUNTIME/lua",
-            vim.fn.expand "$VIMRUNTIME/lua/vim/lsp",
-						vim.fn.stdpath "data" .. "/lazy/lazy.nvim/lua/lazy",
-				},
-			},
-		},
-	},
+    settings = {
+        Lua = {
+            diagnostics = {
+                globals = { "vim" },
+            },
+            workspace = {
+                library = {
+                    vim.fn.expand("$VIMRUNTIME/lua"),
+                    vim.fn.expand("$VIMRUNTIME/lua/vim/lsp"),
+                    vim.fn.stdpath("data") .. "/lazy/lazy.nvim/lua/lazy",
+                    factorio_data_path .. "/core", -- Путь к "core" в factorio-data
+                    factorio_data_path .. "/base", -- Путь к "base" в factorio-data
+                    factorio_data_path .. "/elevated-rails", -- Путь к "base" в factorio-data
+                    factorio_data_path .. "/quality", -- Путь к "base" в factorio-data
+                    factorio_data_path .. "/space-age", -- Путь к "base" в factorio-data
+                },
+                checkThirdParty = false, -- Отключение предупреждений об сторонних библиотеках
+            },
+        },
+    },
 }
 
 vim.diagnostic.config {

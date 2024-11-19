@@ -1,0 +1,3 @@
+[submodule "lua_prototypes/factorio-data"]
+	path = lua_prototypes/factorio-data
+	url = https://github.com/wube/factorio-data.git
